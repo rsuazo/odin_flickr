@@ -1,0 +1,14 @@
+<h1>Flickr User Search</h1><br><br>
+
+  <%= form_with method: 'get',  local: true do |f| %>
+    <%= f.label :Flickr_Username %>
+    <%= f.text_field :flickr_username %><br><br>
+    <%= submit_tag("Submit") %>
+  <% end %><br><br>
+
+
+<% if @photos %>
+    <% @photos.each do |photo| %>
+    <img src=<%="https://live.staticflickr.com/#{photo.server}/#{photo.id}_#{photo.secret}_z.jpg"%> alt="Puppy"><br><br>
+    <% end %>
+<% end %>
